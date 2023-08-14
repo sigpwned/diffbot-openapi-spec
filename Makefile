@@ -3,7 +3,11 @@ all: openapi.json openapi.min.json
 clean:
 	rm -f *.json
 
-# This is the "extract" set of endpoints
+# This is the "extract" set of endpoints.
+#
+# For the curious, this URL was pulled from
+# https://docs.diffbot.com/openapi.  It's not hard to see how
+# additional parts of the OpenAPI spec could be similarly extracted.
 openapi-extract.json:
 	curl -o openapi-extract.json https://docs.diffbot.com/openapi/638975592e00230010aaaa39
 
@@ -22,4 +26,3 @@ openapi.json: openapi-extract.json
 # Create a minified version, while we're in here
 openapi.min.json: openapi.json
 	cat openapi.json | jq -c >openapi.min.json
-	

@@ -1,2 +1,5 @@
 # Don't commit (generated) JSON files
 *.json
+
+# Emacs
+*~
