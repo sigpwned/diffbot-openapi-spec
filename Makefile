@@ -21,7 +21,7 @@ openapi-extract.json:
 #
 # Also, we're only handling the "extract" OpenAPI spec at this time.
 openapi.json: openapi-extract.json
-	cat openapi-extract.json | jq 'walk(if (.|type) == "object" and .items? and (.items|type) == "array" then .items = .items[0] else . end)|del(.paths["/{api}"])|.openapi="3.0.3"' >openapi.json
+	cat openapi-extract.json | jq -f extract.jq >openapi.json
 
 # Create a minified version, while we're in here
 openapi.min.json: openapi.json
