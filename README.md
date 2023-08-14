@@ -12,6 +12,9 @@ OpenAPI-shaped object, massages it into compliance with [v3.0.x of the
 OpenAPI spec](https://spec.openapis.org/oas/v3.0.3.html), and makes
 releases available for general download.
 
+The spec itself may be found under the "releases" section of this
+repo.
+
 At this time, the author only requires the extract
 endpoints. Therefore, only the extract endpoints are currently
 supported. However, the process to add more endpoints is described in
